@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  frontend:
+    build: .
+    command: npm start
+    container_name: doc-frontend
+    tty: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/home/node/app
